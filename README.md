@@ -6,6 +6,8 @@ This is a demo "Contact Us" form for interview candidates to improve in several 
 
 ## Setup
 
+Make sure you have the Nodejs installed on your system. LTS (v22.14.0) should be fine.
+
 Create a test Ethereal Email account at `https://ethereal.email/` and load those details into `.env`.
 
 Then run:
