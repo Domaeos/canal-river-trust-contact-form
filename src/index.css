@@ -1,19 +1,129 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: #444;
-  background-color: #f4f3fa;
+  font-family: Tahoma, sans-serif;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  background-color: #121212;
 }
 
 .error {
-  color: #e63338;
+  color: #ff6b6b;
 }
 
 .success {
-   color: #00e05b;
+  color: #00e05b;
 }
 
 input[type=submit] {
+  font-size: large;
   color: #fff;
-  background-color: #1e29f5;
+  background-image: linear-gradient(135deg, #4a26fd, #246994);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  width: auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+label {
+  font-size: 1.2rem;
+}
+input[type=submit]:hover {
+  box-shadow: 0 0px 16px rgba(33, 199, 255, 0.3);
+}
+
+.contact-form-button {
+  display: flex;
+  justify-content: center;
+}
+
+.page-grid {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.message-length-count {
+  display: block;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.contact-form-header {
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  background-image: linear-gradient(135deg, #305bda, #478eba);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-us-container {
+  width: 100%;
+  min-width: 500px;
+  padding: 30px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  background: #1e1e1e;
+  box-sizing: border-box;
+  border: 1px solid #333;
+}
+
+input, textarea {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  font-size: 1rem;
+  border-radius: 6px;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+textarea {
+  resize: none;
+  height: calc(1.2em * 7);
+  line-height: 1.2em;
+  margin: 0;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #4a26fd;
+  box-shadow: 0 0 0 2px rgba(74, 38, 253, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #bbb;
+}
+
+@media (max-width: 767px) {
+  .page-grid {
+    padding: 15px;
+  }
+
+  .contact-us-container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-us-container {
+    max-width: 600px;
+    width: 50%;
+  }
 }
