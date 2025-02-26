@@ -53,57 +53,67 @@ function Form() {
     };
 
     return (
-        <div>
-            <h1>Contact us form</h1>
-            {result && (
-                <p className={`${result.success ? 'success' : 'error'}`}>
-                    {result.message}
-                </p>
-            )}
-            <form onSubmit={sendEmail}>
-                <p>
-                    <label for="name">Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={state.name}
-                        onChange={onInputChange}
-                    />
-                </p>
+        <div className='page-grid'>
+            <div className="contact-us-container">
+                <h1 className='contact-form-header'>Contact Us</h1>
 
-                <p>
-                    <label for="email">Email Address</label>
-                    <input
-                        type="text"
-                        name="email"
-                        value={state.email}
-                        onChange={onInputChange}
-                    />
-                </p>
+                {result && (
+                    <p className={`${result.success ? 'success' : 'error'}`}>
+                        {result.message}
+                    </p>
+                )}
 
-                <p>
-                    <label for="subject">Subject</label>
-                    <input
-                        type="text"
-                        name="subject"
-                        value={state.subject}
-                        onChange={onInputChange}
-                    />
-                </p>
+                <form onSubmit={sendEmail} className='contact-form'>
+                    <formGroup>
+                        <label for="name">Name:</label>
+                        <input
+                            placeholder='John Doe'
+                            type="text"
+                            name="name"
+                            value={state.name}
+                            onChange={onInputChange}
+                        />
+                    </formGroup>
 
-                <p>
-                    <label for="message">Message</label>
-                    <textarea
-                        name="message"
-                        value={state.message}
-                        onChange={onInputChange}
-                    />
-                </p>
+                    <formGroup>
+                        <label for="email">Email Address:</label>
+                        <input
+                            placeholder='johndoe@yahoo.com'
+                            type="text"
+                            name="email"
+                            value={state.email}
+                            onChange={onInputChange}
+                        />
+                    </formGroup>
 
-                <p>
-                    <input type="submit" value="Send Message" />
-                </p>
-            </form>
+                    <formGroup>
+                        <label for="subject">Subject:</label>
+                        <input
+                            placeholder='Subject'
+                            type="text"
+                            name="subject"
+                            value={state.subject}
+                            onChange={onInputChange}
+                        />
+                    </formGroup>
+
+                    <formGroup>
+                        <label for="message">Message:</label>
+                        <textarea
+                            placeholder='Type your message here...'
+                            name="message"
+                            value={state.message}
+                            onChange={onInputChange}
+                            maxLength={800}
+                        />
+                        <small className='message-length-count'>{800 - state.message.length} characters remaining</small>
+                    </formGroup>
+
+                    <formGroup className='contact-form-button'>
+                        <input type="submit" value="Send Message" />
+                    </formGroup>
+                </form>
+            </div>
         </div>
     );
 }
