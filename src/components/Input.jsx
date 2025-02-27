@@ -1,14 +1,40 @@
 import React from 'react';
 
-const Input = ({ label, type = 'text', name, value, onChange, ...rest }) => {
+const Input = ({ register, name, label, error, messageCount, type, onKeyDown, ...rest }) => {
+    const isTextArea = type === 'textarea';
+
     return (
-        <div className="form-group">
-            <label htmlFor={name}>{label}:</label>
-            {type === 'textarea' ? (
-                <textarea name={name} value={value} onChange={onChange} {...rest} />
+        <div className="form-field-container">
+            <label className='input-label' htmlFor={name}>{label}</label>
+            {isTextArea ? (
+                <textarea
+                    id={name}
+                    {...register(name)}
+                    onKeyDown={onKeyDown}
+                    className={error ? 'input-error' : ''}
+                    {...rest}
+                />
             ) : (
-                <input type={type} name={name} value={value} onChange={onChange} {...rest} />
+                <input
+                    id={name}
+                    type={type}
+                    {...register(name)}
+                    className={error ? 'input-error' : ''}
+                    {...rest}
+                />
             )}
+            <div className="form-field-footer">
+                {error && (
+                    <div className={isTextArea ? 'textarea-error-message' : 'input-error-message'}>
+                        {error.message}
+                    </div>
+                )}
+                {isTextArea && messageCount !== undefined && (
+                    <small className="message-length-count">
+                        {messageCount} characters remaining
+                    </small>
+                )}
+            </div>
         </div>
     );
 };

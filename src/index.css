@@ -3,7 +3,29 @@ body {
   font-family: Tahoma, sans-serif;
   font-size: 1.2rem;
   color: #e0e0e0;
-  background-color: #121212;
+  background-color: #191919
+}
+
+.form-field-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 0.25rem;
+  min-height: 1.5rem;
+}
+
+.input-error-message {
+  font-size: 0.8rem;
+  color: #ff6b6b;
+  margin-bottom: 16px;
+}
+
+.textarea-error-message {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #ff6b6b;
+  margin-bottom: 16px;
 }
 
 .error {
@@ -27,9 +49,11 @@ input[type=submit] {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-label {
+.input-label {
   font-size: 1.2rem;
+  margin-bottom: 0px;
 }
+
 input[type=submit]:hover {
   box-shadow: 0 0px 16px rgba(33, 199, 255, 0.3);
 }
@@ -50,7 +74,7 @@ input[type=submit]:hover {
 }
 
 .message-length-count {
-  display: block;
+  display: inline-  block;
   text-align: right;
   margin-bottom: 20px;
 }
@@ -76,6 +100,7 @@ input[type=submit]:hover {
   background: #1e1e1e;
   box-sizing: border-box;
   border: 1px solid #333;
+  margin-bottom: 0px;
 }
 
 input, textarea {
@@ -87,7 +112,7 @@ input, textarea {
   padding: 12px;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 }
 
 textarea {
