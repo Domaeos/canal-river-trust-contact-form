@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import contactFormValidationSchema from './schemas/contactFormValidationSchema';
 import './index.css';
+import HoneyPot from './components/HoneyPot';
 
 function Form() {
     const {
@@ -20,7 +21,8 @@ function Form() {
             name: '',
             email: '',
             subject: '',
-            message: ''
+            message: '',
+            _extra_field: '',
         }
     });
 
@@ -29,12 +31,14 @@ function Form() {
     const messageValue = watch('message', '');
 
     const onSubmit = async (data) => {
+        if (data._extra_field) {
+            return;
+        }
         setSubmitting(true);
 
         try {
             const response = await sendMessage(data);
             setResult(response);
-            console.log("RESPONSE: ", response)
 
             if (response.success) {
                 reset();
@@ -82,6 +86,7 @@ function Form() {
                             disabled={submitting}
                         />
                     ))}
+                    <HoneyPot register={register} />
                     <div className='contact-form-button'>
                         <input
                             type='submit'
