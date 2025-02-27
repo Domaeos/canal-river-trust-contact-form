@@ -1,6 +1,6 @@
 const Message = require("../models/Message");
 
-exports.sendMessage = async (req, res) => {
+exports.sendMessage = async (req, res, next) => {
     try {
         const { name, email, subject, message } = req.body;
 
@@ -12,7 +12,6 @@ exports.sendMessage = async (req, res) => {
 
         res.status(201).json(newMessage);
     } catch (error) {
-        console.error("Error saving message:", error);
-        res.status(500).json({ error: "Something went wrong. Try again later." });
+        next(error);
     }
 };
