@@ -34,6 +34,7 @@ function Form() {
         try {
             const response = await sendMessage(data);
             setResult(response);
+            console.log("RESPONSE: ", response)
 
             if (response.success) {
                 reset();
