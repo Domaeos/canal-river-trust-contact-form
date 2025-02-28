@@ -1,12 +1,16 @@
-export default function HoneyPot({ register }) {
+function HoneyPot({ register }) {
     return (
         <input
-            {...register("_extra_field")}
+            {...register('_extra_field')}
+            name="_extra_field"
             type="text"
+            data-testid="honeypot"
             style={{
-                position: "absolute",
-                left: "-9999px"
+                position: 'absolute',
+                left: '-9999px',
             }}
         />
     );
 }
+
+export default HoneyPot;

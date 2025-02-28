@@ -1,50 +1,62 @@
 {
-  "name": "interview-contact-us-form",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@hookform/resolvers": "^4.1.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^1.8.1",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-rate-limit": "^7.5.0",
-    "nodemailer": "^6.6.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.54.2",
-    "react-scripts": "^5.0.1",
-    "sequelize": "^6.37.5",
-    "sqlite3": "^5.1.7",
-    "yup": "^1.6.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start-server": "node server/index.js",
-    "start-app": "npm run build && npm run start-server"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "interview-contact-us-form",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@hookform/resolvers": "^4.1.2",
+        "axios": "^1.8.1",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-rate-limit": "^7.5.0",
+        "nodemailer": "^6.6.3",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-hook-form": "^7.54.2",
+        "react-scripts": "^5.0.1",
+        "sequelize": "^6.37.5",
+        "sqlite3": "^5.1.7",
+        "yup": "^1.6.1"
+    },
+    "scripts": {
+        "prepare": "husky",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+        "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!@axios)/' --watchAll=false",
+        "test:server": "jest --testPathPattern=server --watchAll=false",
+        "eject": "react-scripts eject",
+        "start-server": "node server/index.js",
+        "start-app": "npm run build && npm run start-server"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "husky": "^9.1.7",
+        "jest": "^27.5.1",
+        "prettier": "^3.5.2",
+        "supertest": "^7.0.0"
+    }
 }

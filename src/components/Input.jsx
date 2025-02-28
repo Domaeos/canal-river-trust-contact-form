@@ -1,11 +1,22 @@
 import React from 'react';
 
-const Input = ({ register, name, label, error, messageCount, type, onKeyDown, ...rest }) => {
+function Input({
+    register,
+    name,
+    label,
+    error,
+    messageCount,
+    type,
+    onKeyDown,
+    ...rest
+}) {
     const isTextArea = type === 'textarea';
 
     return (
         <div className="form-field-container">
-            <label className='input-label' htmlFor={name}>{label}</label>
+            <label className="input-label" htmlFor={name}>
+                {label}
+            </label>
             {isTextArea ? (
                 <textarea
                     id={name}
@@ -25,7 +36,13 @@ const Input = ({ register, name, label, error, messageCount, type, onKeyDown, ..
             )}
             <div className="form-field-footer">
                 {error && (
-                    <div className={isTextArea ? 'textarea-error-message' : 'input-error-message'}>
+                    <div
+                        className={
+                            isTextArea
+                                ? 'textarea-error-message'
+                                : 'input-error-message'
+                        }
+                    >
                         {error.message}
                     </div>
                 )}
@@ -37,6 +54,6 @@ const Input = ({ register, name, label, error, messageCount, type, onKeyDown, ..
             </div>
         </div>
     );
-};
+}
 
 export default Input;
