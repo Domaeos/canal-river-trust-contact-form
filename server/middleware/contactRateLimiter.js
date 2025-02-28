@@ -7,7 +7,7 @@ const limiter = rateLimit({
         const err = new Error('Too many requests, please try again later.');
         err.status = 429;
         next(err);
-    }
+    },
 });
 
 module.exports = limiter;
