@@ -35,17 +35,17 @@ function Input({
                 />
             )}
             <div className="form-field-footer">
-                {error && (
-                    <div
-                        className={
-                            isTextArea
-                                ? 'textarea-error-message'
-                                : 'input-error-message'
-                        }
-                    >
-                        {error.message}
-                    </div>
-                )}
+
+                <div
+                    className={
+                        isTextArea
+                            ? 'textarea-error-message'
+                            : 'input-error-message'
+                    }
+                >
+                    {error && error.message}
+                </div>
+
                 {isTextArea && messageCount !== undefined && (
                     <small className="message-length-count">
                         {messageCount} characters remaining
