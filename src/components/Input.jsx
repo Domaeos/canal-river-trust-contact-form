@@ -35,7 +35,6 @@ function Input({
                 />
             )}
             <div className="form-field-footer">
-
                 <div
                     className={
                         isTextArea
